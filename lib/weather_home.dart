@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_forecast/bottom_view.dart';
 import 'package:weather_forecast/weather_model.dart';
 import './network.dart';
 import './middle_view.dart';
@@ -37,7 +38,12 @@ class _WeatherForecastState extends State<WeatherForecast> {
                 builder: (BuildContext context,
                     AsyncSnapshot<WeatherModel> snapshot) {
                   if (snapshot.hasData) {
-                    return middleView(snapshot);
+                    return Column(
+                      children: [
+                        middleView(snapshot),
+                        bottomView(snapshot, context)
+                      ],
+                    );
                   } else {
                     // do something else
                     return Container(

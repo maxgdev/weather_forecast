@@ -28,7 +28,12 @@ Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
           ),
           Text("${Util.getFormattedDate(formattedDate)}"),
           SizedBox(height: 10),
-           Icon(FontAwesomeIcons.sun, size: 180, color: Colors.amber.shade800),
+          //  Icon(FontAwesomeIcons.sun, size: 180, color: Colors.amber.shade800),
+           getWeatherIcon(
+             weatherDescription: forecastList[0].weather[0].description,
+             size: 180,
+             color: Colors.amber.shade800
+           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 22, horizontal: 12),
             child: Row(
@@ -69,7 +74,7 @@ Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
               ),
               Column(
                 children: [
-                  Text("${forecastList[0].main.tempMax} ℉"),
+                  Text("${forecastList[0].main.tempMax.toStringAsFixed(0)} ℉"),
                   SizedBox(height: 8),
                   // Icon(Icons.wb_sunny_sharp, size: 20, color: Colors.amber),
                   Icon(FontAwesomeIcons.temperatureHigh, size: 20, color: Colors.amber.shade800),
