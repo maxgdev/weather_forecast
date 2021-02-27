@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_forecast/weather_model.dart';
 import './network.dart';
+import './middle_view.dart';
 
 class WeatherForecast extends StatefulWidget {
   WeatherForecast({Key key, this.title}) : super(key: key);
@@ -13,7 +14,7 @@ class WeatherForecast extends StatefulWidget {
 class _WeatherForecastState extends State<WeatherForecast> {
   Future<WeatherModel> forecastObject;
 
-  String _cityName = "London";
+  String _cityName = "San Diego";
 
   @override
   void initState() {
@@ -40,7 +41,8 @@ class _WeatherForecastState extends State<WeatherForecast> {
                     AsyncSnapshot<WeatherModel> snapshot) {
                   if (snapshot.hasData) {
                     // do something
-                    return Text("Data found");
+                    // return Text("Data found");
+                    return middleView(snapshot);
                   } else {
                     // do something else
                     return Container(
