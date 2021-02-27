@@ -7,9 +7,18 @@ Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
   var country = snapshot.data.city.country;
 
   Container middleView = Container(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [Text("$city, $country")],
+    child: Padding(
+      padding: const EdgeInsets.all(14.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [Text("$city, $country",
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 18,
+          color: Colors.black87,
+          ),
+        )],
+      ),
     ),
   );
   return middleView;

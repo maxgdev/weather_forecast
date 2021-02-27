@@ -20,9 +20,6 @@ class _WeatherForecastState extends State<WeatherForecast> {
   void initState() {
     super.initState();
     forecastObject = Network().getWeatherForecast(cityName: _cityName);
-    // forecastObject.then((weather) => {
-    //   print(weather.city.name)
-    // });
   }
 
   @override
@@ -40,8 +37,6 @@ class _WeatherForecastState extends State<WeatherForecast> {
                 builder: (BuildContext context,
                     AsyncSnapshot<WeatherModel> snapshot) {
                   if (snapshot.hasData) {
-                    // do something
-                    // return Text("Data found");
                     return middleView(snapshot);
                   } else {
                     // do something else
@@ -50,26 +45,32 @@ class _WeatherForecastState extends State<WeatherForecast> {
                       child: CircularProgressIndicator(),
                     ));
                   }
-                },
+                }, // AsyncSnapshot
               ),
             ),
           ],
         ));
   }
-}
 
-Widget textFieldView() {
-  return Container(
-    child: TextField(
-      decoration: InputDecoration(
-        hintText: "Enter City",
-        prefix: Icon(Icons.search),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        contentPadding: EdgeInsets.all(8),
+  Widget textFieldView() {
+    return Container(
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: "Enter City Name",
+          prefix: Icon(Icons.search),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+          contentPadding: EdgeInsets.all(8),
+        ),
+        onSubmitted: (value) {
+          setState(() {
+            _cityName = value;
+            forecastObject = getWeather(cityName: _cityName);
+          });
+        },
       ),
-      onSubmitted: (value) {
-        // ToDO
-      },
-    ),
-  );
+    );
+  }
+
+  Future<WeatherModel> getWeather({String cityName}) =>
+      Network().getWeatherForecast(cityName: cityName);
 }
