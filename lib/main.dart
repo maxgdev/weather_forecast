@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Weather Forecast'),
+      home: WeatherForecast(title: 'Weather Forecast'),
     );
   }
 }
