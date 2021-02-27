@@ -8,7 +8,7 @@ class Network {
     //  var finalUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q="+cityName+
     //      "&appid="+Util.appId+"&units=imperial"; //change to metric or imperial
 
-    var finalUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+Util.appId+"&cnt=7";
+    var finalUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+Util.appId+"&cnt=7"+"&units=imperial";
     
      final response = await get(Uri.encodeFull(finalUrl));
     //  print("URL: ${Uri.encodeFull(finalUrl)}");

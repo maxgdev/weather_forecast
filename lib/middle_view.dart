@@ -27,11 +27,12 @@ Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
           ),
           Text("${Util.getFormattedDate(formattedDate)}"),
           SizedBox(height: 10),
-          Icon(
-            Icons.wb_sunny_outlined,
-            size: 180,
-            color: Colors.blueAccent,
-          ),
+           Icon(FontAwesomeIcons.sun, size: 180, color: Colors.amber.shade800),
+          // Icon(
+          //   Icons.wb_sunny_outlined,
+          //   size: 180,
+          //   color: Colors.blueAccent,
+          // ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
             child: Row(
