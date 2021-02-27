@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './weather_model.dart';
 import './forecast_util.dart';
+import './convert_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
@@ -28,13 +29,8 @@ Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
           Text("${Util.getFormattedDate(formattedDate)}"),
           SizedBox(height: 10),
            Icon(FontAwesomeIcons.sun, size: 180, color: Colors.amber.shade800),
-          // Icon(
-          //   Icons.wb_sunny_outlined,
-          //   size: 180,
-          //   color: Colors.blueAccent,
-          // ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+            padding: EdgeInsets.symmetric(vertical: 22, horizontal: 12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -51,7 +47,7 @@ Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
               ],
             ),
           ),
-          Padding(padding: EdgeInsets.all(12.0),
+          Padding(padding: EdgeInsets.all(5.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
