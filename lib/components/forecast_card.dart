@@ -44,8 +44,8 @@ Widget forecastCard(AsyncSnapshot<WeatherModel> snapshot, int index) {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(FontAwesomeIcons.thermometerQuarter , size: 16, color: Colors.black87),
-              Text("Temp: ${forecastList[0].main.temp} ℉"),
-              // Icon(Icons.thermostat_rounded , size: 16, color: Colors.black87),
+              // Text("Temp: ${forecastList[0].main.temp} ℉"),
+              Text(" Hum: ${forecastList[0].main.humidity} %"),
             ],
           ),
           Row(
@@ -53,14 +53,13 @@ Widget forecastCard(AsyncSnapshot<WeatherModel> snapshot, int index) {
             children: [
               Icon(FontAwesomeIcons.thermometerFull , size: 16, color: Colors.black87),
               Text("Max:${forecastList[0].main.tempMax} ℉"),
-              // Icon(Icons.thermostat_outlined , size: 16, color: Colors.black87),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(FontAwesomeIcons.tint, size: 16, color: Colors.black87),
-              Text(" Hum: ${forecastList[0].main.humidity} %"),
+              Text("Temp: ${forecastList[0].main.temp} ℉"),
             ],
           ),
           Row(

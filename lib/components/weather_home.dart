@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_forecast/bottom_view.dart';
-import 'package:weather_forecast/weather_model.dart';
+import 'package:weather_forecast/components/bottom_view.dart';
+import 'package:weather_forecast/components/weather_model.dart';
 import './network.dart';
 import './middle_view.dart';
 
