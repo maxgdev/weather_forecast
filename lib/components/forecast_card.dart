@@ -18,7 +18,7 @@ Widget forecastCard(AsyncSnapshot<WeatherModel> snapshot, int index) {
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      Padding(padding: EdgeInsets.only(top: 3)),
+      Padding(padding: EdgeInsets.only(top: 10)),
       Center(child: Text(dayOfWeek)),
       SizedBox(height: 5),
       Row(
@@ -43,7 +43,7 @@ Widget forecastCard(AsyncSnapshot<WeatherModel> snapshot, int index) {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(FontAwesomeIcons.thermometerQuarter , size: 16, color: Colors.black87),
+              Icon(FontAwesomeIcons.tint , size: 16, color: Colors.black87),
               // Text("Temp: ${forecastList[0].main.temp} ℉"),
               Text(" Hum: ${forecastList[0].main.humidity} %"),
             ],
@@ -58,8 +58,8 @@ Widget forecastCard(AsyncSnapshot<WeatherModel> snapshot, int index) {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(FontAwesomeIcons.tint, size: 16, color: Colors.black87),
-              Text("Temp: ${forecastList[0].main.temp} ℉"),
+              Icon(FontAwesomeIcons.thermometerEmpty, size: 16, color: Colors.black87),
+              Text("Min: ${forecastList[0].main.tempMin} ℉"),
             ],
           ),
           Row(

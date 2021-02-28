@@ -21,7 +21,7 @@ Widget bottomView(AsyncSnapshot<WeatherModel> snapshot, BuildContext context) {
         style: TextStyle(fontSize: 18, color: Colors.black87),
       ),
       Container(
-          height: 180,
+          height: 190,
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           child: ListView.separated(
               scrollDirection: Axis.horizontal,
@@ -30,7 +30,7 @@ Widget bottomView(AsyncSnapshot<WeatherModel> snapshot, BuildContext context) {
               itemBuilder: (context, index) => ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     child: Container(
-                      width: MediaQuery.of(context).size.width / 2.7,
+                      width: MediaQuery.of(context).size.width / 2.5,
                       height: 160,
                       // child: forecastCard(snapshot, index),
                       child: test(snapshot, index),
