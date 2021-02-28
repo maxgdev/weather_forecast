@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './weather_model.dart';
 import './forecast_util.dart';
 import './convert_icon.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 Widget forecastCard(AsyncSnapshot<WeatherModel> snapshot, int index) {
@@ -42,29 +43,31 @@ Widget forecastCard(AsyncSnapshot<WeatherModel> snapshot, int index) {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Temp: 54 ℉"),
-              Icon(Icons.thermostat_rounded , size: 16, color: Colors.black87),
+              Icon(FontAwesomeIcons.thermometerQuarter , size: 16, color: Colors.black87),
+              Text("Temp: ${forecastList[0].main.temp} ℉"),
+              // Icon(Icons.thermostat_rounded , size: 16, color: Colors.black87),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Max: 59 ℉"),
-              Icon(Icons.thermostat_outlined , size: 16, color: Colors.black87),
+              Icon(FontAwesomeIcons.thermometerFull , size: 16, color: Colors.black87),
+              Text("Max:${forecastList[0].main.tempMax} ℉"),
+              // Icon(Icons.thermostat_outlined , size: 16, color: Colors.black87),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Hum: 60 %"),
-              Icon(Icons.water_damage_outlined , size: 16, color: Colors.black87),
+              Icon(FontAwesomeIcons.tint, size: 16, color: Colors.black87),
+              Text(" Hum: ${forecastList[0].main.humidity} %"),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Wind: 5 m/h"),
-              Icon(Icons.waves_outlined , size: 16, color: Colors.black87),
+              Icon(FontAwesomeIcons.wind, size: 16, color: Colors.black87),
+              Text(" Wind: ${forecastList[0].wind.speed} m/h"),
             ],
           ),
         ],

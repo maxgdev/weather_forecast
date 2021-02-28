@@ -30,7 +30,7 @@ Widget middleView(AsyncSnapshot<WeatherModel> snapshot) {
           SizedBox(height: 10),
           //  Icon(FontAwesomeIcons.sun, size: 180, color: Colors.amber.shade800),
            getWeatherIcon(
-             weatherDescription: forecastList[0].weather[0].description,
+             weatherDescription: forecastList[0].weather[0].main,
              size: 180,
              color: Colors.amber.shade800
            ),
